@@ -1,0 +1,5 @@
+*.out
+main.c
+*.txt
+.VScode
+.DS_Store
