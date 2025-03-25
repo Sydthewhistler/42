@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr_hex.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/05 12:03:47 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/13 13:06:01 by scavalli         ###   ########.fr       */
+/*   Created: 2025/03/05 12:49:51 by scavalli          #+#    #+#             */
+/*   Updated: 2025/03/25 16:43:13 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-void	ft_putptr_hex(unsigned long n)
+void	ft_putstr(char *str)
 {
-	if (n >= 16)
-		ft_putptr_hex(n / 16);
-	write(1, &"0123456789abcdef"[n % 16], 1);
+	size_t	i;
+
+	i = 0;
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return ;
+	}
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }

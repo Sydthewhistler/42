@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 11:00:03 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/13 14:46:57 by scavalli         ###   ########.fr       */
+/*   Created: 2025/03/03 23:28:18 by scavalli          #+#    #+#             */
+/*   Updated: 2025/03/20 19:13:45 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+t_list	*ft_lstnew(void *content)
 {
-	if (ac < 2)
-		return (-1);
-	if (check_av(av) == -1)
-	{
-		ft_printf("Error\n");
-		return (-1);
-	}
-	return (0);
+	t_list	*new;
+
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

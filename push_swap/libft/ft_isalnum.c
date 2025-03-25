@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 11:19:46 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/13 13:01:52 by scavalli         ###   ########.fr       */
+/*   Created: 2025/03/03 17:17:33 by scavalli          #+#    #+#             */
+/*   Updated: 2025/03/03 22:30:49 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
-#include <limits.h>
+#include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+int	ft_isalnum(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while ((s1[i] || s2[i]))
-	{
-		if (s1[i] != s2[i])
-			return (-1);
-		i++;
-	}
-	return (0);
+	return (ft_isalpha(c) + ft_isdigit(c));
 }

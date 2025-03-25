@@ -6,32 +6,65 @@
 #    By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 12:53:00 by scavalli          #+#    #+#              #
-#    Updated: 2025/03/13 12:57:02 by scavalli         ###   ########.fr        #
+#    Updated: 2025/03/25 16:48:18 by scavalli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FILE =  main.c utils.c check_input.c ft_printf.c ft_putnbr_hex.c ft_putnbr.c \
-		ft_putptr_hex.c ft_putstr.c
+# Standard
 NAME = push_swap
+# Directories
+LIBFT = ./libft/libft.a
+INC = inc/
+SRC_DIR = srcs/
+OBJ_DIR = obj/
+# Compiler and CFlags
 CC = clang
-CFLAGS = -Wall -Wextra -Werror
-SRCS = $(FILE)
-OBJS = ${SRCS:.c=.o}
+CFLAGS = -Wall -Werror -Wextra
+RM = rm -f
 
-.PHONY: all clean fclean re
+# Source Files
+COMMANDS_FILE = $(wildcard $(SRC_DIR)commands/*.c)
+UTILS_FUNCTIONS_FILE = $(wildcard $(SRC_DIR)utils_functions/*.c)
+ALGORITHM_FILE = $(wildcard $(SRC_DIR)algorithm/*.c)
 
-all : $(NAME)
+# Concatenate all source files
+SRCS = $(COMMANDS_FILE) $(UTILS_FUNCTIONS_FILE) $(ALGORITHM_FILE)
 
-.c.o:
-	$(CC) $(CFLAGS) -c $< -o $@
+# Generate corresponding object files
+OBJ = $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
 
-$(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+# Build rules
+start:
+	@echo "Fichiers sources : $(SRCS)"
+	@echo "Fichiers objets : $(OBJ)"
+	@make all
 
-clean :
-	rm -f $(OBJS)
+$(LIBFT):
+	@make -C ./libft
 
-fclean : clean
-	rm -f $(NAME)
+all: $(NAME)
 
-re : fclean all
+$(NAME): $(OBJ) $(LIBFT)
+	@echo "Liaison de $@"
+	$(CC) $(CFLAGS) -I$(INC) $(OBJ) $(LIBFT) -o $(NAME)
+
+# Compilation des fichiers objets à partir des fichiers sources
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	@echo "Compilation de $<"
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+
+clean:
+	@echo "Nettoyage des fichiers objets"
+	@$(RM) -r $(OBJ_DIR)
+	@make clean -C ./libft
+
+fclean: clean
+	@echo "Nettoyage de l'exécutable et de la bibliothèque"
+	@$(RM) $(NAME)
+	@$(RM) $(LIBFT)
+
+re: fclean all
+
+# Les cibles factices représentent des actions, pas des fichiers
+.PHONY: start all clean fclean re

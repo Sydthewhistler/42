@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_hex.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/05 12:38:51 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/13 13:05:55 by scavalli         ###   ########.fr       */
+/*   Created: 2025/03/03 17:18:36 by scavalli          #+#    #+#             */
+/*   Updated: 2025/03/03 22:32:37 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-void	ft_putnbr_lowercase_hex(unsigned int n)
+size_t	ft_strlen(const char *str)
 {
-	if (n >= 16)
-		ft_putnbr_lowercase_hex(n / 16);
-	write(1, &"0123456789abcdef"[n % 16], 1);
-}
+	int	i;
 
-void	ft_putnbr_uppercase_hex(unsigned int n)
-{
-	if (n >= 16)
-		ft_putnbr_uppercase_hex(n / 16);
-	write(1, &"0123456789ABCDEF"[n % 16], 1);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

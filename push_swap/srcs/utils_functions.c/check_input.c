@@ -6,11 +6,11 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 11:51:12 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/13 13:12:47 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:36:10 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../../inc/header.h"
 
 static int	ft_nb_is_int(const char *str)
 {
