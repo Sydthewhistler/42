@@ -6,27 +6,23 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 17:17:13 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/03 22:30:45 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/26 22:11:35 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned char	*tab;
-	size_t			i;
+	void	*ptr;
 
-	if (nmemb == 0 || size == 0 || nmemb > SIZE_MAX / size)
+	if (count != 0 && size > SIZE_MAX / count)
 		return (NULL);
-	tab = malloc(nmemb * size);
-	if (!tab)
+
+	ptr = malloc(count * size);
+	if (!ptr)
 		return (NULL);
-	i = 0;
-	while (i < nmemb * size)
-	{
-		tab[i] = 0;
-		i++;
-	}
-	return ((void *)tab);
+
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }

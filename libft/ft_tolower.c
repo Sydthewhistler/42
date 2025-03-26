@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 17:18:56 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/03 22:33:16 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/26 21:20:50 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	return (c + 32);
+	if (65 <= c && c <= 90)
+		return (c + 32);
+	return(c);
 }

@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 17:18:58 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/03 22:33:21 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/26 21:19:10 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	return (c - 32);
+	if (97 <= c && c <= 122)
+		return (c - 32);
+	return(c);
 }

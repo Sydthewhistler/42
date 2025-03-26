@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 17:17:24 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/03 22:30:32 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/26 21:44:40 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int	ft_atoi(const char *str)
 		nb = nb * 10 + str[i] - '0';
 		i++;
 	}
-	return (nb);
+	return (nb * minus);
 }
