@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 11:00:15 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/25 16:50:06 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/26 17:17:56 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,25 +39,29 @@ typedef struct s_stack
 
 int					check_av(char **av);
 int					ft_strcmp(const char *s1, const char *s2);
-void				node_initiation(t_stack *stack_from, t_stack *stack_to,
-						bool which_step);
+void				node_initiation_a(t_stack *stack_from, t_stack *stack_to);
+void				node_initiation_b(t_stack *stack_a, t_stack *stack_b);
 void				define_index(t_stack *lst);
 
 int					algorithm(int ac, char **av);
-t_stack				initialise_stack_a(int ac, char **av, t_stack *stack_a);
+t_stack				*initialise_stack_a(int ac, char **av, t_stack **stack_a);
+t_stack				*ft_lst_add_new_last(t_stack *list, int content, int index);
 unsigned int		stack_size(t_stack *stack_a);
 void				sort_three(t_stack **lst);
 void				sort_turk(t_stack **stack_a, t_stack **stack_b);
+void				move_a_to_b(t_stack **stack_a, t_stack **stack_b);
+void				move_b_to_a(t_stack **stack_a, t_stack **stack_b);
 void				ft_lstclear_stack(t_stack **lst);
 bool				check_if_sorted(t_stack *lst);
 
-t_stack				find_max(t_stack *lst);
-t_stack				find_min(t_stack stack_a);
+t_stack				*find_max(t_stack *lst);
+t_stack				*find_min(t_stack *stack_a);
 t_stack				*find_last(t_stack *stack);
 void				prep_for_push(t_stack **stack, t_stack *top_node,
 						bool which_stack);
 void				put_min_top(t_stack **top_node);
 
+void				rr(t_stack **stack_from, t_stack **stack_to);
 void				rotate(t_stack **stack);
 void				ra(t_stack **stack);
 void				rb(t_stack **stack);
@@ -66,6 +70,7 @@ void				push(t_stack **src, t_stack **dst);
 void				pa(t_stack **stack_a, t_stack **stack_b);
 void				pb(t_stack **stack_a, t_stack **stack_b);
 
+void				rrr(t_stack **stack_from, t_stack **stack_to);
 void				reverse_rotate(t_stack **stack);
 void				rra(t_stack **stack);
 void				rrb(t_stack **stack);

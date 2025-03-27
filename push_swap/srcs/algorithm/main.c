@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 11:00:03 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/25 16:35:22 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/26 17:26:41 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	main(int ac, char **av)
 		return (-1);
 	}
 	algorithm(ac, av);
+	sleep(30);
 	return (0);
 }

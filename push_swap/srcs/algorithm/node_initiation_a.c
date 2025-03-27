@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 09:29:56 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/25 16:35:35 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/26 16:23:09 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	define_index(t_stack *lst)
 	int	i;
 
 	i = 0;
-	median = ft_lstsize(lst) / 2;
+	median = stack_size(lst) / 2;
 	while (lst)
 	{
 		lst->index = i;
@@ -33,9 +33,8 @@ void	define_index(t_stack *lst)
 
 static void	set_target_a(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack	target;
 	int		target_value;
-	t_stack	first_node_b;
+	t_stack	*first_node_b;
 
 	first_node_b = stack_b;
 	target_value = 2147483647;
@@ -58,13 +57,13 @@ static void	set_target_a(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-static void	cost_analysis(t_stack stack_from, t_stack stack_to)
+static void	cost_analysis(t_stack *stack_from, t_stack *stack_to)
 {
 	int	len_stack_from;
 	int	len_stack_to;
 
-	len_stack_from = ft_lstsize(stack_from);
-	len_stack_to = ft_lstsize(stack_to);
+	len_stack_from = stack_size(stack_from);
+	len_stack_to = stack_size(stack_to);
 	while (stack_from)
 	{
 		stack_from->push_cost = stack_from->index;
@@ -78,10 +77,10 @@ static void	cost_analysis(t_stack stack_from, t_stack stack_to)
 	}
 }
 
-static void	set_cheapest(t_stack stack_from)
+static void	set_cheapest(t_stack *stack_from)
 {
 	int		cheapest_value;
-	t_stack	cheapest_node;
+	t_stack	*cheapest_node;
 
 	cheapest_value = 2147483647;
 	while (stack_from)

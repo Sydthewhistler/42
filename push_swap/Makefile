@@ -6,7 +6,7 @@
 #    By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 12:53:00 by scavalli          #+#    #+#              #
-#    Updated: 2025/03/25 16:48:18 by scavalli         ###   ########.fr        #
+#    Updated: 2025/03/26 17:52:12 by scavalli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC_DIR = srcs/
 OBJ_DIR = obj/
 # Compiler and CFlags
 CC = clang
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 RM = rm -f
 
 # Source Files
@@ -65,6 +65,8 @@ fclean: clean
 	@$(RM) $(LIBFT)
 
 re: fclean all
+
+make restart : fclean start
 
 # Les cibles factices représentent des actions, pas des fichiers
 .PHONY: start all clean fclean re

@@ -6,16 +6,19 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 17:27:08 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/25 16:36:17 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/26 17:16:09 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/header.h"
 
-t_stack	ft_lst_add_new_last(t_stack *list, int content, int index)
+t_stack	*ft_lst_add_new_last(t_stack *list, int content, int index)
 {
 	t_stack	*new;
 
+	new = malloc(sizeof(t_stack));
+	if(!new)
+		exit(-1);
 	while (list && list->next)
 		list = list->next;
 	new->content = content;

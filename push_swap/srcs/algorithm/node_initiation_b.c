@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:44:17 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/25 16:35:39 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/26 16:24:58 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 static void	set_target_b(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack	target;
 	int		target_value;
-	t_stack	first_node_a;
+	t_stack	*first_node_a;
 
 	first_node_a = stack_a;
 	target_value = -2147483648;
@@ -46,7 +45,7 @@ void	node_initiation_b(t_stack *stack_a, t_stack *stack_b)
 	set_target_b(stack_a, stack_b);
 }
 
-t_stack	find_min(t_stack stack_a)
+t_stack	*find_min(t_stack *stack_a)
 {
 	int		min;
 	t_stack	*min_node;

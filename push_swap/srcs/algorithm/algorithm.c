@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 17:19:58 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/25 16:35:11 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/26 16:04:58 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ int	algorithm(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	stack_a = initialise_stack_a(ac, av, &stack_a);
+	initialise_stack_a(ac, av, &stack_a);
 	if (!check_if_sorted(stack_a))
 	{
 		if (stack_size(stack_a) == 2)
 		{
 			ft_printf("sa\n");
-			ft_lstclear_stack(stack_a);
+			ft_lstclear_stack(&stack_a);
 			return (0);
 		}
 		else if (stack_size(stack_a) == 3)
@@ -46,6 +46,6 @@ int	algorithm(int ac, char **av)
 		else
 			sort_turk(&stack_a, &stack_b);
 	}
-	ft_lstclear_stack(stack_a);
+	ft_lstclear_stack(&stack_a);
 	return (0);
 }

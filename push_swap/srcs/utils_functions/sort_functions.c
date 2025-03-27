@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 17:42:30 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/25 16:36:55 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/26 17:11:04 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ void	rr(t_stack **stack_from, t_stack **stack_to)
 
 void	put_min_top(t_stack **top_node)
 {
-	t_stack	min_node;
+	t_stack	*min_node;
 
 	min_node = find_min(*top_node);
-	while (top_node != min_node)
+	while (*top_node != min_node)
 	{
-		if (top_node->position_from_median)
-			ra(stack);
+		if ((*top_node)->position_from_median)
+			ra(top_node);
 		else
-			rra(stack);
+			rra(top_node);
 	}
 }
 

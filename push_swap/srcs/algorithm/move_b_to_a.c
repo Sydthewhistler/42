@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:32:26 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/25 16:35:32 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/26 16:17:35 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	move_b_to_a(t_stack **stack_a, t_stack **stack_b)
 {
-	prep_for_push(a, (*stack_b)->target, A);
+	prep_for_push(stack_a, (*stack_b)->target, STACK_A);
 	pa(stack_a, stack_b);
 }
