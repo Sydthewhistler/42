@@ -6,30 +6,31 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 12:49:51 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/13 13:06:29 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/31 18:05:01 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "ft_printf.h"
 
-void	ft_putstr(char *str)
+void	ft_putstr(char *str, int *len)
 {
 	size_t	i;
 
 	i = 0;
 	if (str == NULL)
 	{
-		write(1, "(null)", 6);
+		ft_putstr("(null)", len);
 		return ;
 	}
 	while (str[i])
 	{
-		write(1, &str[i], 1);
+		ft_putchar(str[i], len);
 		i++;
 	}
 }
 
-void	ft_putchar(char c)
+void	ft_putchar(char c, int *len)
 {
 	write(1, &c, 1);
+	(*len)++;
 }
