@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 11:36:42 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/26 16:17:02 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/30 18:17:58 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,5 @@ void	move_a_to_b(t_stack **stack_a, t_stack **stack_b)
 		reverse_rotate_both(stack_a, stack_b, cheapest_node);
 	prep_for_push(stack_a, cheapest_node, STACK_A);
 	prep_for_push(stack_b, cheapest_node->target, STACK_B);
-	pb(stack_b, stack_a);
+	pb(stack_a, stack_b);
 }

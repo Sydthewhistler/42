@@ -6,11 +6,18 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:58:03 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/25 16:36:02 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/27 13:30:08 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/header.h"
+
+void	rr(t_stack **stack_from, t_stack **stack_to)
+{
+	rotate(stack_from);
+	rotate(stack_to);
+	ft_printf("rr\n");
+}
 
 void	rotate(t_stack **stack)
 {

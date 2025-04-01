@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 18:02:27 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/25 16:36:05 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/27 12:51:17 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	sa(t_stack **stack)
 	second_node->previous = NULL;
 	second_node->next = *stack;
 	*stack = (*stack)->previous;
+	ft_printf("sa\n");
 }

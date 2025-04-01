@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:56:51 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/25 16:35:55 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/27 15:02:03 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {
-	push(stack_a, stack_b);
+	push(stack_b, stack_a);
 	ft_printf("pa\n");
 }
 
@@ -46,5 +46,4 @@ void	push(t_stack **src, t_stack **dst)
 		(*dst)->previous = nomad_node;
 		*dst = nomad_node;
 	}
-	ft_printf("pb\n");
 }

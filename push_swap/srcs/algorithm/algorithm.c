@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 17:19:58 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/26 16:04:58 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/31 08:58:26 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ bool	check_if_sorted(t_stack *lst)
 	return (true);
 }
 
-int	algorithm(int ac, char **av)
+int	algorithm(char **av)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
 	stack_a = NULL;
 	stack_b = NULL;
-	initialise_stack_a(ac, av, &stack_a);
+	initialise_stack_a(av + 1, &stack_a);
 	if (!check_if_sorted(stack_a))
 	{
 		if (stack_size(stack_a) == 2)

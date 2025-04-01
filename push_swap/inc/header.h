@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 11:00:15 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/26 17:17:56 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/30 18:28:53 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void				node_initiation_a(t_stack *stack_from, t_stack *stack_to);
 void				node_initiation_b(t_stack *stack_a, t_stack *stack_b);
 void				define_index(t_stack *lst);
 
-int					algorithm(int ac, char **av);
-t_stack				*initialise_stack_a(int ac, char **av, t_stack **stack_a);
-t_stack				*ft_lst_add_new_last(t_stack *list, int content, int index);
+int	algorithm(char **av);
+void				initialise_stack_a(char **av, t_stack **stack_a);
+void				ft_lst_add_new_last(t_stack **stack, int content);
 unsigned int		stack_size(t_stack *stack_a);
 void				sort_three(t_stack **lst);
 void				sort_turk(t_stack **stack_a, t_stack **stack_b);
@@ -76,5 +76,12 @@ void				rra(t_stack **stack);
 void				rrb(t_stack **stack);
 
 void				sa(t_stack **stack);
+
+//debug functions
+
+void display_stack(t_stack *stack);
+void display_target_stack(t_stack *stack);
+void	check_sorted_stack(t_stack *stack);
+
 
 #endif

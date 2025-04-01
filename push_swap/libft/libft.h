@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 22:09:32 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/25 12:34:36 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/04/01 12:10:43 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
 # include "header_printf.h" // PRINTF
 
 int					ft_isalpha(int c);

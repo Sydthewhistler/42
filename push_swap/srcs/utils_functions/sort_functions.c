@@ -6,25 +6,11 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 17:42:30 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/26 17:11:04 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/30 18:22:53 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/header.h"
-
-void	rrr(t_stack **stack_from, t_stack **stack_to)
-{
-	reverse_rotate(stack_from);
-	reverse_rotate(stack_to);
-	ft_printf("rrr\n");
-}
-
-void	rr(t_stack **stack_from, t_stack **stack_to)
-{
-	rotate(stack_from);
-	rotate(stack_to);
-	ft_printf("rr\n");
-}
 
 void	put_min_top(t_stack **top_node)
 {
@@ -33,7 +19,7 @@ void	put_min_top(t_stack **top_node)
 	min_node = find_min(*top_node);
 	while (*top_node != min_node)
 	{
-		if ((*top_node)->position_from_median)
+		if (min_node->position_from_median)
 			ra(top_node);
 		else
 			rra(top_node);

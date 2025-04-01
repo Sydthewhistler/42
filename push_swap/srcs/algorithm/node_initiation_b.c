@@ -6,35 +6,37 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:44:17 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/26 16:24:58 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/03/30 18:10:05 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/header.h"
 
-static void	set_target_b(t_stack *stack_a, t_stack *stack_b)
+static void	set_target_b(t_stack *a, t_stack *b)
 {
-	int		target_value;
-	t_stack	*first_node_a;
-
-	first_node_a = stack_a;
-	target_value = -2147483648;
-	while (stack_b)
+	t_stack	*current_a;
+	t_stack	*target_node;
+	long	current_biggest_content;
+	while (b)
 	{
-		while (stack_a)
+		target_node = NULL;
+		current_biggest_content = LONG_MAX;
+		current_a = a;
+		while (current_a)
 		{
-			if ((stack_a->content > stack_b->content)
-				&& (stack_a->content >= target_value))
+			if (current_a->content > b->content 
+				&& current_a->content < current_biggest_content)
 			{
-				stack_b->target = stack_a;
-				target_value = stack_a->content;
+				current_biggest_content = current_a->content;
+				target_node = current_a;
 			}
-			stack_a = stack_a->next;
+			current_a = current_a->next;
 		}
-		stack_a = first_node_a;
-		if (!stack_b->target)
-			stack_b->target = find_min(stack_a);
-		stack_a = stack_a->next;
+		if (current_biggest_content == LONG_MAX)
+			b->target = find_min(a);
+		else
+			b->target = target_node;
+		b = b->next;
 	}
 }
 
@@ -42,7 +44,7 @@ void	node_initiation_b(t_stack *stack_a, t_stack *stack_b)
 {
 	define_index(stack_a);
 	define_index(stack_b);
-	set_target_b(stack_a, stack_b);
+	set_target_b(stack_a, stack_b); //prblm
 }
 
 t_stack	*find_min(t_stack *stack_a)
@@ -51,6 +53,7 @@ t_stack	*find_min(t_stack *stack_a)
 	t_stack	*min_node;
 
 	min = stack_a->content;
+	min_node = stack_a;
 	while (stack_a)
 	{
 		if (stack_a->content < min)
