@@ -6,7 +6,7 @@
 /*   By: scavalli <scavalli@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:22:29 by scavalli          #+#    #+#             */
-/*   Updated: 2025/03/10 14:41:58 by scavalli         ###   ########.fr       */
+/*   Updated: 2025/04/02 21:53:27 by scavalli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	**ft_split(char const *s, char c)
 	size_t	start;
 
 	i = 0;
-	j = 0;
+	j = 1;
 	tab = malloc(sizeof(char *) * count_word(s, c) + 1);
 	if (!tab)
 		return (NULL);
